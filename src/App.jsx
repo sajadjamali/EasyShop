@@ -3,9 +3,8 @@ import Body from './Components/Body'
 import Particle from './Components/Particle'
 
 function App() {
-
   return (
-    <div className="lg:w-10/12 m-auto pb-6">
+    <div className="pb-6 overflow-hidden">
     <Header />
     <Body />
     <Particle/>

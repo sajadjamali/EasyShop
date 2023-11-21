@@ -9,11 +9,6 @@ ul.slides {
     list-style: none;
 }
 
-@media screen and (min-width: 1024px){
-    ul.slides {
-        width: 83.3vw;
-    }
-}
 .slides * {
     user-select: none;
     -ms-user-select: none;
