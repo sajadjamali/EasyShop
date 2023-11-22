@@ -16,7 +16,7 @@ const ProductDetails = () => {
             <Header />
             {item ?
                 <section className="flex flex-col items-center justify-center px-4 pt-8 xl:flex-row">
-                    <img src={item.image} className="h-96 me-5 xl:w-4/12 rounded-md" alt="not found" />
+                    <img src={item.image} className="h-96 xl:w-4/12 rounded-md" alt="not found" />
                     <div className="text-justify space-y-6 bg-indigo-200 mt-5 font-bold">
                         <p className="text-rose-900 text-center text-xl">{item.title}</p>
                         <hr style={{ height: "2px" }} className="bg-red-800" />
