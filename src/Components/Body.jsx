@@ -59,7 +59,7 @@ const Body = () => {
                 </select>
             </section>
             <HoverRating />
-            {renderedProducts.length > 0 ? <ProductList products={renderedProducts} /> : (count < 2 ? <Spinner /> : <div className="flex flex-col items-center mt-9"><img src={notFound} alt="not found" /><p className="font-bold text-2xl text-white mt-4">not found...🤦‍♂️</p></div>)}
+            {renderedProducts.length > 0 ? <ProductList products={renderedProducts} /> : (count < 2 ? <Spinner /> : <div className="flex flex-col w-6/12 mx-auto items-center mt-9"><img src={notFound} alt="not found" /><p className="font-bold text-xl text-white mt-4">No products were found</p></div>)}
         </>
     );
 }

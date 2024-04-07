@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Header from "../layout/Header";
 import { useSelector, useDispatch } from "react-redux";
 import { decreaseToZero } from "../../slices/productSlice";
 import notFound from "../assets/gif/notFound.gif";

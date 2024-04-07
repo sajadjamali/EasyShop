@@ -2,7 +2,7 @@ export const particleBackround = {
     autoPlay: true,
     background: {
         color: {
-            value: "#17163e"
+            value: "#000"
         },
         image: "",
         position: "",
@@ -20,6 +20,7 @@ export const particleBackround = {
         },
         enable: false
     },
+    clear: true,
     defaultThemes: {},
     delay: 0,
     fullScreen: {
@@ -33,8 +34,8 @@ export const particleBackround = {
         detectsOn: "window",
         events: {
             onClick: {
-                enable: false,
-                mode: []
+                enable: true,
+                mode: ['push']
             },
             onDiv: {
                 selectors: [],
@@ -44,7 +45,7 @@ export const particleBackround = {
             },
             onHover: {
                 enable: true,
-                mode: "light",
+                mode: "trail",
                 parallax: {
                     enable: false,
                     force: 2,
@@ -57,6 +58,46 @@ export const particleBackround = {
             }
         },
         modes: {
+            trail: {
+                delay: 0.005,
+                pauseOnStop: true,
+                quantity: 5,
+                particles: {
+                    color: {
+                        value: "#ff0000",
+                        animation: {
+                            enable: true,
+                            speed: 400,
+                            sync: true
+                        }
+                    },
+                    collisions: {
+                        enable: false
+                    },
+                    links: {
+                        enable: false
+                    },
+                    move: {
+                        outModes: {
+                            default: "destroy"
+                        },
+                        speed: 2
+                    },
+                    size: {
+                        value: {
+                            min: 1,
+                            max: 5
+                        },
+                        animation: {
+                            enable: true,
+                            speed: 5,
+                            sync: true,
+                            startValue: "min",
+                            destroy: "max"
+                        }
+                    }
+                }
+            },
             attract: {
                 distance: 200,
                 duration: 0.4,
@@ -123,133 +164,21 @@ export const particleBackround = {
                 factor: 3,
                 radius: 200
             },
-            trail: {
-                delay: 1,
-                pauseOnStop: false,
-                quantity: 1,
-                particles: {
-                    bounce: {
-                        horizontal: {
-                            random: {}
-                        },
-                        vertical: {
-                            random: {}
-                        }
-                    },
-                    collisions: {
-                        bounce: {
-                            horizontal: {
-                                random: {}
-                            },
-                            vertical: {
-                                random: {}
-                            }
-                        },
-                        overlap: {}
-                    },
-                    color: {
-                        animation: {}
-                    },
-                    destroy: {
-                        split: {
-                            factor: {
-                                random: {}
-                            },
-                            rate: {
-                                random: {}
-                            }
-                        }
-                    },
-                    life: {
-                        delay: {
-                            random: {}
-                        },
-                        duration: {
-                            random: {}
-                        }
-                    },
-                    links: {
-                        shadow: {},
-                        triangles: {}
-                    },
-                    move: {
-                        angle: {},
-                        attract: {
-                            rotate: {}
-                        },
-                        distance: {},
-                        gravity: {},
-                        outModes: {},
-                        path: {
-                            delay: {
-                                random: {}
-                            }
-                        },
-                        trail: {}
-                    },
-                    number: {
-                        density: {}
-                    },
-                    opacity: {
-                        animation: {},
-                        random: {}
-                    },
-                    roll: {
-                        darken: {},
-                        enlighten: {}
-                    },
-                    rotate: {
-                        animation: {}
-                    },
-                    shadow: {
-                        offset: {}
-                    },
-                    shape: {},
-                    size: {
-                        animation: {},
-                        random: {}
-                    },
-                    stroke: {
-                        color: {
-                            value: "",
-                            animation: {
-                                count: 0,
-                                enable: false,
-                                offset: {
-                                    max: 0,
-                                    min: 0
-                                },
-                                speed: 0,
-                                decay: 0,
-                                sync: false
-                            }
-                        }
-                    },
-                    tilt: {
-                        animation: {}
-                    },
-                    twinkle: {
-                        lines: {},
-                        particles: {}
-                    },
-                    wobble: {}
-                }
-            },
             light: {
                 area: {
                     gradient: {
                         start: {
-                            value: "3b5e98"
+                            value: "#ffffff"
                         },
                         stop: {
-                            value: "#17163e"
+                            value: "#000000"
                         }
                     },
                     radius: 1000
                 },
                 shadow: {
                     color: {
-                        value: "#17163e"
+                        value: "#000000"
                     },
                     length: 2000
                 }
@@ -260,17 +189,9 @@ export const particleBackround = {
     particles: {
         bounce: {
             horizontal: {
-                random: {
-                    enable: false,
-                    minimumValue: 0.1
-                },
                 value: 1
             },
             vertical: {
-                random: {
-                    enable: false,
-                    minimumValue: 0.1
-                },
                 value: 1
             }
         },
@@ -280,21 +201,14 @@ export const particleBackround = {
             },
             bounce: {
                 horizontal: {
-                    random: {
-                        enable: false,
-                        minimumValue: 0.1
-                    },
                     value: 1
                 },
                 vertical: {
-                    random: {
-                        enable: false,
-                        minimumValue: 0.1
-                    },
                     value: 1
                 }
             },
             enable: false,
+            maxSpeed: 50,
             mode: "bounce",
             overlap: {
                 enable: true,
@@ -307,28 +221,37 @@ export const particleBackround = {
                 h: {
                     count: 0,
                     enable: true,
-                    offset: 0,
-                    speed: 20,
+                    speed: 50,
                     decay: 0,
-                    sync: true
+                    delay: 0,
+                    sync: false,
+                    offset: 0
                 },
                 s: {
                     count: 0,
                     enable: false,
-                    offset: 0,
                     speed: 1,
                     decay: 0,
-                    sync: true
+                    delay: 0,
+                    sync: true,
+                    offset: 0
                 },
                 l: {
                     count: 0,
                     enable: false,
-                    offset: 0,
                     speed: 1,
                     decay: 0,
-                    sync: true
+                    delay: 0,
+                    sync: true,
+                    offset: 0
                 }
             }
+        },
+        effect: {
+            close: true,
+            fill: true,
+            options: {},
+            type: []
         },
         groups: {},
         move: {
@@ -364,10 +287,6 @@ export const particleBackround = {
             path: {
                 clamp: true,
                 delay: {
-                    random: {
-                        enable: false,
-                        minimumValue: 0
-                    },
                     value: 0
                 },
                 enable: false,
@@ -382,7 +301,7 @@ export const particleBackround = {
             },
             random: false,
             size: false,
-            speed: 6,
+            speed: 2,
             spin: {
                 acceleration: 0,
                 enable: false
@@ -402,23 +321,27 @@ export const particleBackround = {
                 width: 1920,
                 height: 1080
             },
-            limit: 0,
-            value: 30
+            limit: {
+                mode: "delete",
+                value: 0
+            },
+            value: 100
         },
         opacity: {
-            random: {
-                enable: false,
-                minimumValue: 0.1
+            value: {
+                min: 0.3,
+                max: 0.8
             },
-            value: 1,
             animation: {
                 count: 0,
-                enable: false,
-                speed: 2,
+                enable: true,
+                speed: 0.5,
                 decay: 0,
+                delay: 0,
                 sync: false,
-                destroy: "none",
-                startValue: "random"
+                mode: "auto",
+                startValue: "random",
+                destroy: "none"
             }
         },
         reduceDuplicates: false,
@@ -434,106 +357,36 @@ export const particleBackround = {
             }
         },
         shape: {
+            close: true,
+            fill: true,
             options: {},
-            type: [
-                "circle",
-                "square"
-            ]
+            type: "circle"
         },
         size: {
-            random: {
-                enable: true,
-                minimumValue: 15
-            },
             value: {
-                min: 15,
-                max: 30
+                min: 1,
+                max: 3
             },
             animation: {
                 count: 0,
-                enable: false,
-                speed: 5,
+                enable: true,
+                speed: 3,
                 decay: 0,
+                delay: 0,
                 sync: false,
-                destroy: "none",
-                startValue: "random"
+                mode: "auto",
+                startValue: "random",
+                destroy: "none"
             }
         },
         stroke: {
-            width: 0,
-            color: {
-                value: "",
-                animation: {
-                    h: {
-                        count: 0,
-                        enable: false,
-                        offset: 0,
-                        speed: 0,
-                        decay: 0,
-                        sync: false
-                    },
-                    s: {
-                        count: 0,
-                        enable: false,
-                        offset: 0,
-                        speed: 1,
-                        decay: 0,
-                        sync: true
-                    },
-                    l: {
-                        count: 0,
-                        enable: false,
-                        offset: 0,
-                        speed: 1,
-                        decay: 0,
-                        sync: true
-                    }
-                }
-            }
+            width: 0
         },
         zIndex: {
-            random: {
-                enable: false,
-                minimumValue: 0
-            },
             value: 0,
             opacityRate: 1,
             sizeRate: 1,
             velocityRate: 1
-        },
-        life: {
-            count: 0,
-            delay: {
-                random: {
-                    enable: false,
-                    minimumValue: 0
-                },
-                value: 0,
-                sync: false
-            },
-            duration: {
-                random: {
-                    enable: false,
-                    minimumValue: 0.0001
-                },
-                value: 0,
-                sync: false
-            }
-        },
-        rotate: {
-            random: {
-                enable: false,
-                minimumValue: 0
-            },
-            value: 0,
-            animation: {
-                enable: true,
-                speed: 5,
-                decay: 0,
-                sync: false
-            },
-            direction: "clockwise",
-            path: false
         },
         destroy: {
             bounds: {},
@@ -541,17 +394,9 @@ export const particleBackround = {
             split: {
                 count: 1,
                 factor: {
-                    random: {
-                        enable: false,
-                        minimumValue: 0
-                    },
                     value: 3
                 },
                 rate: {
-                    random: {
-                        enable: false,
-                        minimumValue: 0
-                    },
                     value: {
                         min: 4,
                         max: 9
@@ -575,10 +420,6 @@ export const particleBackround = {
             speed: 25
         },
         tilt: {
-            random: {
-                enable: false,
-                minimumValue: 0
-            },
             value: 0,
             animation: {
                 enable: false,
@@ -609,21 +450,40 @@ export const particleBackround = {
                 move: 10
             }
         },
+        life: {
+            count: 0,
+            delay: {
+                value: 0,
+                sync: false
+            },
+            duration: {
+                value: 0,
+                sync: false
+            }
+        },
+        rotate: {
+            value: 0,
+            animation: {
+                enable: false,
+                speed: 0,
+                decay: 0,
+                sync: false
+            },
+            direction: "clockwise",
+            path: false
+        },
         orbit: {
             animation: {
                 count: 0,
                 enable: false,
                 speed: 1,
                 decay: 0,
+                delay: 0,
                 sync: false
             },
             enable: false,
             opacity: 1,
             rotation: {
-                random: {
-                    enable: false,
-                    minimumValue: 0
-                },
                 value: 45
             },
             width: 1
@@ -631,11 +491,11 @@ export const particleBackround = {
         links: {
             blink: false,
             color: {
-                value: "#fff"
+                value: "random"
             },
             consent: false,
             distance: 100,
-            enable: false,
+            enable: true,
             frequency: 1,
             opacity: 1,
             shadow: {
@@ -653,10 +513,6 @@ export const particleBackround = {
             warp: false
         },
         repulse: {
-            random: {
-                enable: false,
-                minimumValue: 0
-            },
             value: 0,
             enabled: false,
             distance: 1,
@@ -672,5 +528,12 @@ export const particleBackround = {
     style: {},
     themes: [],
     zLayers: 100,
-    emitters: []
+    emitters: [],
+    motion: {
+        disable: false,
+        reduce: {
+            factor: 4,
+            value: true
+        }
+    }
 }

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Spinner from "./Spinner";
-import Header from "./Header";
+import Header from "../layout/Header";
 import StarIcon from '@mui/icons-material/Star';
 
 const ProductDetails = () => {

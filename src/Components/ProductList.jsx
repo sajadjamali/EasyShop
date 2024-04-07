@@ -2,8 +2,8 @@ import Product from "./Product";
 
 const ProductList = ({ products }) => {
     return (
-        <section className="px-5 grid gap-x-5 gap-y-8 items-center tm:grid-cols-2 ym:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-5">
-            {products.map((p, index) => (
+        <section className="px-4 sm:px-10 grid gap-x-5 gap-y-8 items-center grid-cols-1 xm:grid-cols-2 ym:grid-cols-3 lg:grid-cols-4 mx-auto lg:w-10/12 mt-5">
+            {products.map(p => (
                 <Product key={p.id} item={p} />
             ))}
         </section>

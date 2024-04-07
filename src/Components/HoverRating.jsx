@@ -3,19 +3,8 @@ import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
 import { toast } from 'react-toastify';
-
-const labels = {
-  0.5: 'Useless',
-  1: 'Useless+',
-  1.5: 'Poor',
-  2: 'Poor+',
-  2.5: 'Ok',
-  3: 'Ok+',
-  3.5: 'Good',
-  4: 'Good+',
-  4.5: 'Excellent',
-  5: 'Excellent+',
-};
+import SendIcon from '@mui/icons-material/Send';
+import { labels } from '../Constants';
 
 function getLabelText(value) {
   return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
@@ -30,7 +19,7 @@ const HoverRating = () => {
 
   if (toggle === false) {
     toggle = true;
-    const myTimeout = setTimeout(show, 7000);
+    const myTimeout = setTimeout(show, 5000);
   }
 
   function show() {
@@ -51,8 +40,8 @@ const HoverRating = () => {
   }
 
   return (
-    <div id="rating" className="hidden bg-orange-500 justify-center ring-4 text-white sm:w-6/12 py-4 mx-3 rounded-lg">
-      <p>What do you think about the <span className="text-black font-bold">Easy Shop?</span></p>
+    <div id="rating" className="hidden bg-stone-800 justify-center ring-4 text-white sm:w-6/12 py-4 mx-3 rounded-lg">
+      <p>What do you think about the <span className="text-rose-600 font-bold">Easy Shop</span> ?</p>
       <Box
         sx={{
           display: 'flex',
@@ -74,10 +63,13 @@ const HoverRating = () => {
           emptyIcon={<StarIcon style={{ fontSize: "1em" }} />}
         />
         {value !== null && (
-          <Box sx={{ ml: 2, fontSize: "1.2em" }}>{labels[hover !== -1 ? hover : value]}</Box>
+          <Box sx={{ ml: 2, fontSize: "1.2em", width: '70%' }}>{labels[hover !== -1 ? hover : value]}</Box>
         )}
       </Box>
-      <button onClick={handleRating} className="block w-10/12 m-auto bg-rose-600 text-lg text-white font-bold py-1 mt-2 rounded-lg">send</button>
+      <button onClick={handleRating} className="w-64 hover:scale-105 m-auto bg-rose-600 text-lg text-white font-bold py-1 mt-5 rounded-lg">
+        send
+        <SendIcon className='ms-3 text-blue-700' />
+      </button>
     </div>
   );
 }

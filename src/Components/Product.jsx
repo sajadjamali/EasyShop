@@ -36,7 +36,7 @@ const Product = ({ item }) => {
     }
     return (
         <>
-            <article className="m-auto w-full h-full max-[350px]:w-8/12 rounded-xl border-2 border-gray-200 bg-white p-2 hover:scale-105">
+            <article className="m-auto w-full h-full rounded-xl border-2 border-gray-200 bg-white p-2 hover:scale-105">
                 <img src={item.image} className="h-40 m-auto" alt="not found" />
                 <p className="font-bold text-center mt-3 text-violet-900">{splitWords(item.title, 2)}</p>
                 <p className="text-center mt-2"><span className="text-rose-500 font-bold">Category: </span>{item.category}</p>
