@@ -1,0 +1,16 @@
+.easyShop {
+  background: linear-gradient(90deg, rgba(215, 3, 25, 1) 19%,
+      rgba(126, 21, 199, 1) 47%,
+      rgba(22, 199, 21, 1) 85%);
+}
+
+.cartIcon:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffee10;
+}
+
+.cartIcon:hover {
+  color: #ffee10;
+  box-shadow: 0 0 10px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+}

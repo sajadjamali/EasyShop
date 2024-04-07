@@ -1,13 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
-import { changeInputValue, changeSelectValue } from "../../slices/filterValueSlice";
+import { changeInputValue, changeSelectValue } from "../redux/slices/filterValueSlice";
 import { useState, useRef, useEffect } from "react";
 import Spinner from "./Spinner";
 import ProductList from "./ProductList";
-import notFound from "../assets/gif/notFound.gif";
+import notFound from "/assets/gif/notFound.gif";
 import HoverRating from "./HoverRating";
-import Carsoaul from "./Carsoaul";
+import Header from "../layout/Header";
 
-const Body = () => {
+const Home = () => {
 
     const dispatch = useDispatch();
     const selectRef = useRef();
@@ -47,7 +47,7 @@ const Body = () => {
 
     return (
         <>
-            <Carsoaul />
+            <Header />
             <section className="my-7 mx-auto text-center">
                 <input value={filterValue.inputValue} ref={inputRef} onChange={handle} type="text" placeholder="Search in products..." className="border-t-2 border-b-2 border-s-2 border-gray-500 h-12 rounded-s-lg w-8/12 md:w-7/12 lg:w-5/12 focus:outline-none ring-4 placeholder:text-center" />
                 <select defaultValue={filterValue.selectValue} value={filterValue.seletValue} ref={selectRef} onChange={handle} className="border-t-2 border-r-2 border-b-2 border-gray-500 h-12 rounded-e-lg bg-white border-s text-center w-3/12 ring-4">
@@ -64,4 +64,4 @@ const Body = () => {
     );
 }
 
-export default Body;
+export default Home;

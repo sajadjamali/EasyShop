@@ -1,7 +1,7 @@
 import Header from "../layout/Header";
 import { useSelector, useDispatch } from "react-redux";
-import { decreaseToZero } from "../../slices/productSlice";
-import notFound from "../assets/gif/notFound.gif";
+import { decreaseToZero } from "../redux/slices/productSlice";
+import notFound from "/assets/gif/notFound.gif";
 import Product from "./Product";
 import Particle from './Particle'
 import { toast } from "react-toastify";
@@ -39,7 +39,7 @@ const Cart = () => {
                         {cartItems.map(p => <Product key={p.id} item={p} />)}
                     </section>
                     :
-                    <div className="flex flex-col items-center mt-9"><img src={notFound} alt="not found" /><p className="font-bold text-2xl text-white mt-4">cart is empty...🤦‍♂️</p></div>
+                    <div className="flex flex-col w-4/12 mx-auto items-center mt-9"><img src={notFound} alt="not found" /><p className="font-bold text-2xl text-white mt-4">cart is empty...🤦‍♂️</p></div>
             }
             <Particle />
         </>

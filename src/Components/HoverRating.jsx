@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import Rating from '@mui/material/Rating';
-import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
 import { toast } from 'react-toastify';
 import SendIcon from '@mui/icons-material/Send';
@@ -19,7 +18,7 @@ const HoverRating = () => {
 
   if (toggle === false) {
     toggle = true;
-    const myTimeout = setTimeout(show, 5000);
+    setTimeout(show, 5000);
   }
 
   function show() {
@@ -28,7 +27,8 @@ const HoverRating = () => {
       const ratingModal = document.getElementById("rating");
       ratingModal.style.display = "grid";
       ratingModal.style.position = "absolute";
-      ratingModal.style.top = "100px";
+      const scrollYPosition = window.scrollY;
+      ratingModal.style.top = `${scrollYPosition + 100}px`;
       ratingModal.style.left = "50%";
       ratingModal.style.transform = "translate(-50%, -50%)";
     }
@@ -36,20 +36,14 @@ const HoverRating = () => {
 
   const handleRating = () => {
     document.getElementById("rating").style.display = "none";
-    setTimeout(toast.info("Thank you for your opinion❤❤"), 10);
+    setTimeout(() => { toast.dismiss(); toast.info("Thank you for your opinion❤❤") }, 10);
   }
 
   return (
-    <div id="rating" className="hidden bg-stone-800 justify-center ring-4 text-white sm:w-6/12 py-4 mx-3 rounded-lg">
-      <p>What do you think about the <span className="text-rose-600 font-bold">Easy Shop</span> ?</p>
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
+    <div id="rating" className="hidden text-center w-11/12 z-20 bg-stone-800 justify-center border-2 border-emerald-500 text-white sm:w-6/12 lg:w-4/12 xl:w-3/12 py-4 rounded-lg">
+      <p>What do you think about the <span className="text-rose-600">Easy Shop</span> ?</p>
+      <div className="flex justify-center items-center mt-3 space-x-4 sm:text-xl">
         <Rating
-          sx={{ fontSize: "2.3em" }}
           name="hover-feedback"
           value={value}
           precision={0.5}
@@ -62,13 +56,16 @@ const HoverRating = () => {
           }}
           emptyIcon={<StarIcon style={{ fontSize: "1em" }} />}
         />
-        {value !== null && (
-          <Box sx={{ ml: 2, fontSize: "1.2em", width: '70%' }}>{labels[hover !== -1 ? hover : value]}</Box>
-        )}
-      </Box>
-      <button onClick={handleRating} className="w-64 hover:scale-105 m-auto bg-rose-600 text-lg text-white font-bold py-1 mt-5 rounded-lg">
+        {
+          value !== null &&
+          (
+            <div>{labels[hover !== -1 ? hover : value]}</div>
+          )
+        }
+      </div>
+      <button onClick={handleRating} className="w-10/12 hover:scale-105 m-auto group bg-rose-600 hover:bg-blue-600 text-lg text-white font-bold py-1 mt-5 rounded-lg">
         send
-        <SendIcon className='ms-3 text-blue-700' />
+        <SendIcon className='ms-3 text-blue-600 group-hover:text-rose-600' />
       </button>
     </div>
   );
