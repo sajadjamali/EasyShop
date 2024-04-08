@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css'
 const MainLayout = () => {
     return (
         <>
-            <div className="h-screen flex flex-col justify-between">
+            <div className="h-screen flex flex-col">
                 <Header />
                 <div>
                     <Outlet />

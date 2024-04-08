@@ -5,7 +5,6 @@ import Spinner from "./Spinner";
 import ProductList from "./ProductList";
 import notFound from "/assets/gif/notFound.gif";
 import HoverRating from "./HoverRating";
-import MySwiper from "./MySwiper";
 
 const Home = () => {
 
@@ -47,7 +46,6 @@ const Home = () => {
 
     return (
         <>
-            {/* <MySwiper /> */}
             <section className="mt-7 mx-auto w-11/12 sm:w-10/12 md:w-6/12 text-center">
                 <input value={filterValue.inputValue} ref={inputRef} onChange={handleSearch} type="text" placeholder="Search in products..." className="border-t-2 border-b-2 border-s-2 border-gray-500 h-12 rounded-s-lg w-8/12 md:w-7/12 lg:w-5/12 focus:outline-none ring-4 placeholder:text-center" />
                 <select defaultValue={filterValue.selectValue} value={filterValue.seletValue} ref={selectRef} onChange={handleSearch} className="border-t-2 border-r-2 border-b-2 border-gray-500 h-12 rounded-e-lg bg-white border-s text-center w-3/12 ring-4">

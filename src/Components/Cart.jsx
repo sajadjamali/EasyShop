@@ -2,8 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { decreaseToZero } from "../redux/slices/productSlice";
 import notFound from "/assets/gif/notFound.gif";
 import Product from "./Product";
-import Particle from './Particle'
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
@@ -24,10 +24,11 @@ const Cart = () => {
 
     return (
         <>
-            <div className="py-5 bg-slate-950 text-center text-white space-y-3 flex flex-col justify-center items-center md:space-y-0 md:flex-row md:space-x-10">
-                <p>total number of products: <span className="text-rose-500 text-xl">{totalNumber}</span></p>
-                <button onClick={handleClearCart} className="text-white ring-2 ring-sky-500 bg-rose-600 w-8/12 min-[400px]:w-5/12 sm:w-56 py-2 text-xl rounded-lg">Clear Cart</button>
-                <p>total price of products: <span className="text-rose-500 text-xl">{totalPrice}$</span></p>
+            <div className="py-5 border-t-[1px] border-gray-50 bg-slate-950 text-center text-white space-y-3 flex flex-col justify-center items-center md:space-y-0 md:flex-row md:space-x-5 lg:space-x-10">
+                <Link to="/" className="bg-blue-600 px-3 py-1 rounded-md hover:bg-rose-700">Home</Link>
+                <p>total number of products: <span className="text-rose-500 text-lg">{totalNumber}</span></p>
+                <button style={{ transition: 'transform 0.2s' }} onClick={handleClearCart} className="text-white ring-2 ring-sky-500 bg-rose-600 w-44 py-2 text-lg rounded-lg hover:scale-105">Clear Cart</button>
+                <p>total price of products: <span className="text-rose-500 text-lg">{totalPrice}$</span></p>
             </div>
             {
                 cartItems.length > 0 ?
@@ -35,7 +36,7 @@ const Cart = () => {
                         {cartItems.map(p => <Product key={p.id} item={p} />)}
                     </section>
                     :
-                    <div className="flex flex-col w-4/12 md:w-3/12 mx-auto items-center mt-9"><img src={notFound} alt="not found" /><p className="font-bold text-2xl text-white mt-4">cart is empty...🤦‍♂️</p></div>
+                    <div className="flex flex-col w-6/12 md:w-3/12 mx-auto items-center md:text-lg mt-10"><img src={notFound} alt="not found" /><p className="text-center text-white mt-4">cart is empty...🤦‍♂️</p></div>
             }
         </>
     );

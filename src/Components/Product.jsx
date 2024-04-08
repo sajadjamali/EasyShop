@@ -44,14 +44,15 @@ const Product = ({ item }) => {
                 <div className="text-center my-4">
                     <Link to={`/details/${item.id}`} className="bg-lime-600 py-2 px-3 rounded-xl block font-bold">Details</Link>
                 </div>
-
                 {
                     buttonFlag.current ?
-                        <div className="space-x-4 text-center">
-                            <button onClick={handleDecreaseCart} className="text-xl bg-blue-600 rounded-lg pt-1 px-4">-</button>
-                            <span className="font-bold text-xl">{item.number}</span>
-                            <button onClick={handleIncreaseCart} className="text-xl bg-red-600 rounded-lg pt-1 px-3">+</button>
-                            <button onClick={handleRemoveCart} className="text-xl block w-10/12 bg-green-600 rounded-lg mt-3 pt-1"><DeleteIcon className="text-white" /></button>
+                        <div className="text-center">
+                            <div className="space-x-3">
+                                <button onClick={handleDecreaseCart} className="text-xl bg-blue-600 rounded-lg pt-1 px-4">-</button>
+                                <span className="font-bold text-xl ring-2 ring-yellow-700 rounded-full px-2.5">{item.number}</span>
+                                <button onClick={handleIncreaseCart} className="text-xl bg-red-600 rounded-lg pt-1 px-3">+</button>
+                            </div>
+                            <button onClick={handleRemoveCart} className="text-xl block w-10/12 mx-auto bg-green-600 rounded-lg mt-3 pt-1"><DeleteIcon className="text-white" /></button>
                         </div>
                         :
                         <button onClick={handleAddTOcart} className="font-bold bg-cyan-500 py-2 px-4 w-full rounded-lg">Add to cart</button>

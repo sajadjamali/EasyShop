@@ -30,7 +30,7 @@ const Header = () => {
     }
     // w-full fixed top-0
     return (
-        <div className="py-7 z-10 flex flex-col sm:flex-row space-y-3 sm:space-y-0 justify-around items-center bg-black text-center pt-5">
+        <div className="py-7 z-10 flex flex-col sm:flex-row space-y-3 sm:space-y-0 justify-around items-center bg-slate-950 text-center pt-5">
             <Link to="/cart" title="cart!😍" className="group relative rounded-md cartIcon">
                 <ShoppingCartIcon fontSize="large" className="bi bi-cart-check-fill text-pink-600" />
                 <div className="bg-blue-500 h-0.5 w-10 group-hover:hidden"></div>
