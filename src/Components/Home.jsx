@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import Spinner from "./Spinner";
 import ProductList from "./ProductList";
 import notFound from "/assets/gif/notFound.gif";
-import HoverRating from "./HoverRating";
 
 const Home = () => {
 
@@ -56,7 +55,6 @@ const Home = () => {
                     <option value="Women's Clothing">Women's Clothing</option>
                 </select>
             </section>
-            <HoverRating />
             {renderedProducts.length > 0 ? <ProductList products={renderedProducts} /> : (count < 2 ? <Spinner /> : <div className="flex flex-col sm:w-4/12 md:w-3/12 mx-auto items-center mt-9"><img src={notFound} alt="not found" /><p className="font-bold text-xl text-white mt-4">No products were found</p></div>)}
         </>
     );

@@ -12,7 +12,7 @@ const Product = ({ item }) => {
             <div className="text-center my-4">
                 <Link to={`/details/${item.id}`} className="bg-lime-600 py-2 px-3 rounded-xl block font-bold">Details</Link>
             </div>
-            <Order product={item} color="text-black" />
+            <Order product={item} color="black" />
         </article>
     );
 }

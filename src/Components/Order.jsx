@@ -41,7 +41,7 @@ const Order = ({ product, color }) => {
                     <div className="text-center">
                         <div className="space-x-3">
                             <button onClick={handleDecreaseCart} className="text-lg bg-blue-600 rounded-lg pt-1 px-4">-</button>
-                            <span className={`${color} font-bold text-lg ring-2 ring-yellow-700 rounded-full px-2.5`}>{product.number}</span>
+                            <span id="s" style={{ color: `${color}` }} className='font-bold text-lg ring-2 ring-yellow-700 rounded-full px-2.5'>{product.number}</span>
                             <button onClick={handleIncreaseCart} className="text-lg bg-red-600 rounded-lg pt-1 px-3">+</button>
                         </div>
                         <button onClick={handleRemoveCart} className="text-lg block w-10/12 mx-auto bg-green-600 rounded-lg mt-3 pt-1"><DeleteIcon className="text-white" /></button>

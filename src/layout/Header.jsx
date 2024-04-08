@@ -39,11 +39,11 @@ const Header = () => {
             <p className="text-3xl font-bold text-white easyShop rounded-lg py-1 px-3">
                 <RandomReveal isPlaying duration={2} characters="Easy Shop" />
             </p>
-            <div className="space-x-2 border-2 rounded-md p-1 border-cyan-400">
+            <div className="space-x-2 border-2 rounded-md py-1 px-2 text-center border-cyan-400">
                 <span className="text-rose-600">
                     {date.getHours()} : {date.getMinutes()}
                 </span>
-                <span className="text-blue-500">
+                <span className="text-blue-300">
                     {date.getFullYear()}
                     {" / "}
                     {date.getDate()}
