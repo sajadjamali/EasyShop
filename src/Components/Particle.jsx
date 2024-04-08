@@ -1,4 +1,4 @@
-import { particleBackround } from "../Constants/particles";
+import { particleBackground } from "../Constants/particles";
 import { useCallback } from "react";
 import { loadFull } from "tsparticles";
 import Particles from "react-particles";
@@ -18,7 +18,7 @@ const Particle = () => {
             id="tsparticels"
             init={particlesInit}
             loaded={particlesLoaded}
-            options={particleBackround} />
+            options={particleBackground} />
     );
 }
 

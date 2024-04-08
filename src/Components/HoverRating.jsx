@@ -41,7 +41,7 @@ const HoverRating = () => {
 
   return (
     <div id="rating" className="hidden text-center w-11/12 z-20 bg-stone-800 justify-center border-2 border-emerald-500 text-white sm:w-6/12 lg:w-4/12 xl:w-3/12 py-4 rounded-lg">
-      <p>What do you think about the <span className="text-rose-600">Easy Shop</span> ?</p>
+      <p>What do you think about the <span className="text-rose-500">Easy Shop</span> ?</p>
       <div className="flex justify-center items-center mt-3 space-x-4 sm:text-xl">
         <Rating
           name="hover-feedback"

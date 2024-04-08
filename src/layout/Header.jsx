@@ -28,11 +28,12 @@ const Header = () => {
     function tick() {
         setDate(new Date());
     }
-
+    // w-full fixed top-0
     return (
-        <div className="py-5 w-full z-10 fixed top-0 flex flex-col sm:flex-row space-y-3 sm:space-y-0 justify-around items-center bg-black text-center pt-5">
-            <Link to="/cart" title="cart!😍" className="relative rounded-md cartIcon">
+        <div className="py-7 z-10 flex flex-col sm:flex-row space-y-3 sm:space-y-0 justify-around items-center bg-black text-center pt-5">
+            <Link to="/cart" title="cart!😍" className="group relative rounded-md cartIcon">
                 <ShoppingCartIcon fontSize="large" className="bi bi-cart-check-fill text-pink-600" />
+                <div className="bg-blue-500 h-0.5 w-10 group-hover:hidden"></div>
                 <span className="absolute bottom-2 right-6 font-bold bg-yellow-300 rounded-full py-1 px-3 text-rose-800 transform translate-x-10 -translate-y-2">{count}</span>
             </Link>
             <p className="text-3xl font-bold text-white easyShop rounded-lg py-1 px-3">
@@ -50,7 +51,7 @@ const Header = () => {
                     {date.getMonth()}
                 </span>
             </div>
-        </div>
+        </div >
     );
 }
 

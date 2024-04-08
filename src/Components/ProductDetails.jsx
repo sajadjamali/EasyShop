@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Spinner from "./Spinner";
-import Header from "../layout/Header";
 import StarIcon from '@mui/icons-material/Star';
 
 const ProductDetails = () => {
@@ -13,7 +12,6 @@ const ProductDetails = () => {
 
     return (
         <div className=" bg-indigo-200 h-full xl:h-screen pb-10">
-            <Header />
             {item ?
                 <section className="flex flex-col items-center justify-center px-4 pt-8 xl:flex-row">
                     <img src={item.image} className="h-96 xl:w-4/12 rounded-md" alt="not found" />

@@ -13,12 +13,10 @@
   font-family: 'Vazir';
 }
 
-button:hover {
-  box-shadow: rgba(109, 108, 108, 0.4) 0px 2px 4px,
-    rgba(78, 76, 76, 0.3) 0px 7px 13px -3px,
-    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
 article {
   transition: transform .3s;
+}
+
+#product:hover {
+  scale: 1.01;
 }

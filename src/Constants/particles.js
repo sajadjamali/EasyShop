@@ -1,4 +1,4 @@
-export const particleBackround = {
+export const particleBackground = {
     autoPlay: true,
     background: {
         color: {
@@ -537,3 +537,4 @@ export const particleBackround = {
         }
     }
 }
+

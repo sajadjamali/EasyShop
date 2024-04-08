@@ -5,7 +5,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const Footer = () => {
   return (
-    <div className="bg-gray-950 mt-20 text-white flex h-full w-full p-6 flex-col items-center justify-center space-y-4 md:space-y-0 md:flex-row md:justify-around">
+    <div className="bg-gray-950 mt-20 text-white flex p-6 flex-col items-center justify-center space-y-4 md:space-y-0 md:flex-row md:justify-around">
       <div className="flex items-center justify-center space-x-2">
         <button className="hover:scale-110">
           <InstagramIcon className='text-pink-600' fontSize='large' />

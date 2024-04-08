@@ -5,7 +5,7 @@ import Spinner from "./Spinner";
 import ProductList from "./ProductList";
 import notFound from "/assets/gif/notFound.gif";
 import HoverRating from "./HoverRating";
-import Header from "../layout/Header";
+import MySwiper from "./MySwiper";
 
 const Home = () => {
 
@@ -21,10 +21,10 @@ const Home = () => {
     }
 
     useEffect(() => {
-        handle();
+        handleSearch();
     }, [products.items]);
 
-    const handle = () => {
+    const handleSearch = () => {
         let temp = [];
         const inputText = inputRef.current.value.toLowerCase();
         const category = selectRef.current.value;
@@ -47,10 +47,10 @@ const Home = () => {
 
     return (
         <>
-            <Header />
-            <section className="my-7 mx-auto text-center">
-                <input value={filterValue.inputValue} ref={inputRef} onChange={handle} type="text" placeholder="Search in products..." className="border-t-2 border-b-2 border-s-2 border-gray-500 h-12 rounded-s-lg w-8/12 md:w-7/12 lg:w-5/12 focus:outline-none ring-4 placeholder:text-center" />
-                <select defaultValue={filterValue.selectValue} value={filterValue.seletValue} ref={selectRef} onChange={handle} className="border-t-2 border-r-2 border-b-2 border-gray-500 h-12 rounded-e-lg bg-white border-s text-center w-3/12 ring-4">
+            {/* <MySwiper /> */}
+            <section className="mt-7 mx-auto w-11/12 sm:w-10/12 md:w-6/12 text-center">
+                <input value={filterValue.inputValue} ref={inputRef} onChange={handleSearch} type="text" placeholder="Search in products..." className="border-t-2 border-b-2 border-s-2 border-gray-500 h-12 rounded-s-lg w-8/12 md:w-7/12 lg:w-5/12 focus:outline-none ring-4 placeholder:text-center" />
+                <select defaultValue={filterValue.selectValue} value={filterValue.seletValue} ref={selectRef} onChange={handleSearch} className="border-t-2 border-r-2 border-b-2 border-gray-500 h-12 rounded-e-lg bg-white border-s text-center w-3/12 ring-4">
                     <option value="All">All</option>
                     <option value="Electronics">Electronics</option>
                     <option value="Jewelery">Jewelery</option>
@@ -59,7 +59,7 @@ const Home = () => {
                 </select>
             </section>
             <HoverRating />
-            {renderedProducts.length > 0 ? <ProductList products={renderedProducts} /> : (count < 2 ? <Spinner /> : <div className="flex flex-col w-6/12 mx-auto items-center mt-9"><img src={notFound} alt="not found" /><p className="font-bold text-xl text-white mt-4">No products were found</p></div>)}
+            {renderedProducts.length > 0 ? <ProductList products={renderedProducts} /> : (count < 2 ? <Spinner /> : <div className="flex flex-col sm:w-4/12 md:w-3/12 mx-auto items-center mt-9"><img src={notFound} alt="not found" /><p className="font-bold text-xl text-white mt-4">No products were found</p></div>)}
         </>
     );
 }
