@@ -32,7 +32,7 @@ const Cart = () => {
             </div>
             {
                 cartItems.length > 0 ?
-                    <section className="px-5 grid gap-x-5 gap-y-8 tm:grid-cols-2 ym:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-7">
+                    <section className="grid gap-x-5 md:w-11/12 md:mx-auto gap-y-8 grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 my-10 mx-5">
                         {cartItems.map(p => <Product key={p.id} item={p} />)}
                     </section>
                     :
