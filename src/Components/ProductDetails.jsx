@@ -3,6 +3,7 @@ import StarIcon from '@mui/icons-material/Star';
 import { Link } from "react-router-dom";
 import Order from "./Order";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const ProductDetails = () => {
 
@@ -15,6 +16,10 @@ const ProductDetails = () => {
         { title: 'Rate', value: product.rating.rate },
         { title: 'Count', value: product.rating.count }
     ];
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="py-10">

@@ -4,7 +4,6 @@ import notFound from "/assets/gif/notFound.gif";
 import Product from "./Product";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 const Cart = () => {
 
@@ -22,10 +21,6 @@ const Cart = () => {
         toast.dismiss();
         toast.info("cart cleared👍");
     }
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
 
     return (
         <>
