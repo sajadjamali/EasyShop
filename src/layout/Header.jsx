@@ -30,12 +30,12 @@ const Header = () => {
     }
 
     return (
-        <div className="sticky top-0 pt-6 min-[300px]:py-2 px-4 sm:px-0 z-10 flex flex-col min-[300px]:flex-row space-y-3 sm:space-y-0 justify-around items-center bg-slate-950 text-center">
+        <div className="fixed w-full pt-6 min-[300px]:py-2 px-4 sm:px-0 z-10 flex flex-col min-[300px]:flex-row space-y-3 sm:space-y-0 justify-around items-center bg-slate-950 text-center">
             <div className="flex justify-center items-center space-x-3">
                 <Link to="/cart" title="cart!😍" className="group relative rounded-md cartIcon">
                     <ShoppingCartIcon fontSize="large" className="bi bi-cart-check-fill text-pink-600" />
                     <div className="bg-blue-500 h-0.5 w-10 group-hover:hidden"></div>
-                    <span className="absolute bottom-2 right-6 bg-yellow-300 rounded-full py-1/2 px-1 text-rose-800 transform translate-x-8 -translate-y-4">{count}</span>
+                    <span className="absolute bottom-2 right-6 bg-yellow-300 rounded-full py-1/2 px-2 text-rose-800 transform translate-x-8 -translate-y-4">{count}</span>
                 </Link>
                 <CustomAvatar />
             </div>
