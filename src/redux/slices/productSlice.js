@@ -9,12 +9,22 @@ const initialState = {
 export const fetchProducts = createAsyncThunk(
     "products/fetchProducts",
     async () => {
-        try {
-            const products = await axios.get("https://fakestoreapi.com/products");
-            products.data.map(p => p.number = 0);
-            return products.data;
-        } catch (err) {
-            console.log(err);
+        const jsonProducts = localStorage.getItem('Products');
+        const products = JSON.parse(jsonProducts);
+        if (products.length == 0) {
+            try {
+                const products = await axios.get("https://fakestoreapi.com/products");
+                products.data.map(p => p.number = 0);
+                const jsonProducts = JSON.stringify(products.data);
+                localStorage.setItem('Products', jsonProducts);
+                return products.data;
+            } catch (err) {
+                console.log(err);
+            }
+        } else {
+            const jsonProducts = localStorage.getItem('Products');
+            const products = JSON.parse(jsonProducts);
+            return products;
         }
     }
 );
@@ -26,16 +36,22 @@ const productsSlice = createSlice({
         increaseProduct: (state, action) => {
             const item = state.items.find(p => p.id == action.payload.id);
             item.number++;
+            const jsonProducts = JSON.stringify(state.items);
+            localStorage.setItem('Products', jsonProducts);
         },
 
         decreaseProduct: (state, action) => {
             const item = state.items.find(p => p.id == action.payload.id);
             item.number--;
+            const jsonProducts = JSON.stringify(state.items);
+            localStorage.setItem('Products', jsonProducts);
         },
 
         decreaseToZero: (state, action) => {
             const item = state.items.find(p => p.id == action.payload.id);
             item.number = 0;
+            const jsonProducts = JSON.stringify(state.items);
+            localStorage.setItem('Products', jsonProducts);
         }
     },
     extraReducers: (builder) => {

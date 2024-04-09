@@ -1,42 +1,20 @@
 import { useParams } from "react-router-dom";
-import Spinner from "./Spinner";
 import StarIcon from '@mui/icons-material/Star';
 import { Link } from "react-router-dom";
 import Order from "./Order";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useSelector } from "react-redux";
 
 const ProductDetails = () => {
 
-    const [productInfo, setProductInfo] = useState([]);
-    const [product, setProduct] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
     const { productID } = useParams();
-
-    useEffect(() => {
-        const fetchProduct = async () => {
-            try {
-                const item = await axios.get(`https://fakestoreapi.com/products/${productID}`);
-                const newProductInfo = [
-                    { title: 'Category', value: item.data.category },
-                    { title: 'Price', value: item.data.price },
-                    { title: 'Rate', value: item.data.rating.rate },
-                    { title: 'Count', value: item.data.rating.count }
-                ];
-                setProductInfo(newProductInfo);
-                setProduct(item.data);
-                setLoading(false);
-            } catch (error) {
-                setError(error.message);
-                setLoading(false);
-            }
-        };
-        fetchProduct();
-    }, []);
-
-    if (loading) return <Spinner />;
-    if (error) return <p className="text-white text-xl text-center mt-20">Fetch failed</p>;
+    const products = useSelector(state => state.products.items);
+    const product = products.find(p => p.id == productID);
+    const productInfo = [
+        { title: 'Category', value: product.category },
+        { title: 'Price', value: product.price },
+        { title: 'Rate', value: product.rating.rate },
+        { title: 'Count', value: product.rating.count }
+    ];
 
     return (
         <div className="py-10">
