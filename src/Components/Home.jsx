@@ -48,8 +48,8 @@ const Home = () => {
         <>
             <CusomSwiper />
             <section className="my-10 sm:my-16 mx-auto w-11/12 sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 text-center">
-                <input value={filterValue.inputValue} ref={inputRef} onChange={handleSearch} type="text" placeholder="Search in products..." className="border-t-2 border-b-2 border-s-2 border-gray-500 h-12 rounded-s-lg w-8/12 md:w-7/12 focus:outline-none ring-4 placeholder:text-center" />
-                <select defaultValue={filterValue.selectValue} value={filterValue.seletValue} ref={selectRef} onChange={handleSearch} className="border-t-2 border-r-2 border-b-2 border-gray-500 h-12 rounded-e-lg bg-white border-s text-center w-4/12 md:w-5/12 ring-4">
+                <input value={filterValue.inputValue} ref={inputRef} onChange={handleSearch} type="text" placeholder="Search in products..." className="border-t-2 border-b-2 border-s-2 border-gray-500 h-12 rounded-s-lg w-7/12 focus:outline-none ring-4 placeholder:text-center" />
+                <select defaultValue={filterValue.selectValue} value={filterValue.seletValue} ref={selectRef} onChange={handleSearch} className="border-t-2 border-r-2 border-b-2 border-gray-500 h-12 rounded-e-lg bg-white border-s text-center w-5/12 ring-4">
                     <option value="All">All</option>
                     <option value="Electronics">Electronics</option>
                     <option value="Jewelery">Jewelery</option>

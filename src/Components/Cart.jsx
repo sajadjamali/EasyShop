@@ -4,6 +4,7 @@ import notFound from "/assets/gif/notFound.gif";
 import Product from "./Product";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Cart = () => {
 
@@ -22,6 +23,10 @@ const Cart = () => {
         toast.info("cart cleared👍");
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
             <div className="py-5 border-t-[1px] border-gray-50 bg-slate-950 text-center text-white space-y-3 flex flex-col justify-center items-center md:space-y-0 md:flex-row md:space-x-5 lg:space-x-10">
@@ -36,7 +41,7 @@ const Cart = () => {
                         {cartItems.map(p => <Product key={p.id} item={p} />)}
                     </section>
                     :
-                    <div className="flex flex-col w-6/12 md:w-3/12 mx-auto items-center md:text-lg mt-10"><img src={notFound} alt="not found" /><p className="text-center text-white mt-4">cart is empty...🤦‍♂️</p></div>
+                    <div className="flex flex-col w-6/12 md:w-3/12 mx-auto items-center md:text-lg my-10"><img src={notFound} alt="not found" /><p className="text-center text-white mt-4">cart is empty...🤦‍♂️</p></div>
             }
         </>
     );
