@@ -30,7 +30,7 @@ const Header = () => {
     }
 
     return (
-        <div className="fixed w-full pt-6 min-[300px]:py-2 px-4 sm:px-0 z-10 flex flex-col min-[300px]:flex-row space-y-3 sm:space-y-0 justify-around items-center bg-slate-950 text-center">
+        <div className="fixed w-full pt-5 min-[300px]:pt-2 px-4 sm:px-0 z-10 flex flex-col min-[300px]:flex-row space-y-3 min-[300px]:space-y-0 justify-around items-center bg-slate-950 text-center">
             <div className="flex justify-center items-center space-x-3">
                 <Link to="/cart" title="cart!😍" className="group relative rounded-md cartIcon">
                     <ShoppingCartIcon fontSize="large" className="bi bi-cart-check-fill text-pink-600" />
