@@ -11,7 +11,7 @@ export const fetchProducts = createAsyncThunk(
     async () => {
         const jsonProducts = localStorage.getItem('Products');
         const products = JSON.parse(jsonProducts);
-        if (products.length == 0) {
+        if (!products) {
             try {
                 const products = await axios.get("https://fakestoreapi.com/products");
                 products.data.map(p => p.number = 0);
