@@ -24,7 +24,7 @@ const ProductDetails = () => {
     return (
         <div className="py-10">
             <Link to="/" className="bg-blue-600 block w-32 mx-auto text-white text-center py-1 rounded-md hover:bg-rose-500">Home</Link>
-            <section className="flex flex-col items-center justify-center px-4 pt-6 xl:flex-row xl:space-x-20">
+            <section className="flex flex-col items-center justify-center px-4 pt-2 xl:flex-row xl:space-x-20">
                 <img src={product.image} className="h-96 mt-6 w-11/12 md:w-8/12 lg:w-6/12 xl:w-4/12 rounded-md" alt="not found" />
                 <div className="text-justify p-5 text-white space-y-6 mx-auto w-11/12 md:w-8/12 xl:w-6/12 bg-slate-950 rounded-md mt-5">
                     <p className="text-rose-600 text-center text-xl">{product.title}</p>
