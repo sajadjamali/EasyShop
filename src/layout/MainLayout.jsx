@@ -11,7 +11,7 @@ const MainLayout = () => {
         <>
             <div className="h-screen flex flex-col">
                 <Header />
-                <div className="mt-[107px]">
+                <div className="mt-[88px]">
                     <Outlet />
                 </div>
                 <Footer />

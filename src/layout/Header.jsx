@@ -39,9 +39,7 @@ const Header = () => {
                 </Link>
                 <CustomAvatar />
             </div>
-            <p className="text-3xl font-bold text-white easyShop rounded-lg py-1 px-3">
-                <img src="/assets/imgs/logo.png" alt="not found" className="w-40" />
-            </p>
+            <img src="/assets/imgs/logo.png" alt="not found" className="w-40 h-20" />
             <div className="hidden min-[500px]:block space-x-2 border-2 rounded-md py-1 px-2 text-center border-cyan-400">
                 <span className="text-rose-600">
                     {date.getHours()} : {date.getMinutes()}
