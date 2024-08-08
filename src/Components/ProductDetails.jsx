@@ -32,7 +32,7 @@ const ProductDetails = () => {
                         {
                             productInfo.map(p => (
                                 <div key={p.title}>
-                                    <div className="flex w-52 mx-auto items-center">
+                                    <div className="flex w-60 mx-auto items-center">
                                         <StarIcon fontSize="medium" className="text-yellow-500 me-1" />
                                         <p><span className="text-sky-500">{p.title}:</span> {p.value}</p>
                                     </div>
